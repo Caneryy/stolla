@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WalletProvider } from "@/context/WalletProvider";
 import "./globals.css";
@@ -34,6 +35,7 @@ export default function RootLayout({
         <WalletProvider>
           <Header />
           <main className="flex-1">{children}</main>
+          <Footer />
         </WalletProvider>
       </body>
     </html>

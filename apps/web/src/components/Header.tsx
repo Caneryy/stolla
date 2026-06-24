@@ -14,7 +14,7 @@ export function Header() {
 
   return (
     <header className="border-b border-zinc-200 bg-white">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-6">
           <Link href="/" className="text-lg font-semibold text-zinc-900">
             Stolla
@@ -40,7 +40,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={disconnect}
-                className="rounded-lg border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50"
+                className="rounded-lg border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-50"
               >
                 Disconnect
               </button>
