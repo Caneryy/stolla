@@ -8,14 +8,14 @@ NETWORK="testnet"
 cd "$ROOT_DIR/contracts"
 CARGO_TARGET_DIR=target stellar contract build
 
-DEPLOYER="$(stellar keys address "$IDENTITY" --network "$NETWORK")"
+DEPLOYER="$(stellar keys public-key "$IDENTITY")"
 echo "Deployer: $DEPLOYER"
 
 echo "Deploying community-nft..."
 NFT_ID=$(stellar contract deploy \
   --wasm target/wasm32v1-none/release/community_nft.wasm \
   --source-account "$IDENTITY" \
-  --network "$NETWORK" \
+  -n "$NETWORK" \
   -- \
   --uri "ipfs://stolla-collection/" \
   --name "Stolla Community" \
@@ -28,7 +28,7 @@ echo "Deploying community-governor..."
 GOV_ID=$(stellar contract deploy \
   --wasm target/wasm32v1-none/release/community_governor.wasm \
   --source-account "$IDENTITY" \
-  --network "$NETWORK" \
+  -n "$NETWORK" \
   -- \
   --token_contract "$NFT_ID" \
   --voting_delay 1 \

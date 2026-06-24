@@ -40,7 +40,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   const [isConnecting, setIsConnecting] = useState(false);
 
   useEffect(() => {
-    ensureKit();
+    if (!kitInitialized) return;
     const unsubscribe = StellarWalletsKit.on(
       KitEventType.STATE_UPDATED,
       (event) => {
@@ -56,6 +56,12 @@ export function WalletProvider({ children }: { children: ReactNode }) {
     try {
       const { address: walletAddress } = await StellarWalletsKit.authModal();
       setAddress(walletAddress);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : String(error ?? "");
+      if (message !== "The user closed the modal.") {
+        console.error("Wallet connect failed:", error);
+      }
     } finally {
       setIsConnecting(false);
     }

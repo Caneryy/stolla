@@ -49,16 +49,35 @@ Copy generated values to `apps/web/.env.local`:
 
 ```bash
 cp apps/web/.env.example apps/web/.env.local
-# Edit with contract IDs from deploy output
+# Or run ./scripts/deploy-testnet.sh deployer — it writes .env.local automatically
 ```
 
-### 4. Run the web app
+### 4. Run the web app locally
 
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+### 5. Deploy web app (Vercel)
+
+Import the repo on [Vercel](https://vercel.com/new) with **Root Directory** set to `apps/web`.
+
+Add these environment variables in the Vercel project settings:
+
+| Variable | Value |
+|----------|-------|
+| `NEXT_PUBLIC_STELLAR_NETWORK` | `testnet` |
+| `NEXT_PUBLIC_STELLAR_RPC_URL` | `https://soroban-testnet.stellar.org` |
+| `NEXT_PUBLIC_NFT_CONTRACT_ID` | From deploy script output |
+| `NEXT_PUBLIC_GOVERNOR_CONTRACT_ID` | From deploy script output |
+
+Current testnet deployment (2026-06-24):
+
+- NFT: `CDEBV3G52J3H2HBSORUTWFNLSSL57X75UAPKYAQBHFSFOIHF46A7UCFK`
+- Governor: `CAHM2MNNRYMS4AMFLDBQYJKPAYQZS24JT2HZRP4NBGFODQ2DPXRYEUOE`
+- Deployer: `GCA6ODTDT6MYMO4HHW7EP25KCQFK2OCN3S3ETO4WSGVBMBY3DYBSPIDR`
 
 ## End-to-end flow
 

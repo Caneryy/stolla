@@ -2,9 +2,8 @@
 set -euo pipefail
 
 IDENTITY="${1:-deployer}"
-PUBLIC_KEY="$(stellar keys address "$IDENTITY" --network testnet)"
+PUBLIC_KEY="$(stellar keys public-key "$IDENTITY")"
 
-echo "Funding $IDENTITY ($PUBLIC_KEY) via Friendbot..."
-curl -s "https://friendbot.stellar.org?addr=$PUBLIC_KEY" | head -c 200
-echo ""
+echo "Funding $IDENTITY ($PUBLIC_KEY) on testnet..."
+stellar keys fund "$IDENTITY" -n testnet
 echo "Done."

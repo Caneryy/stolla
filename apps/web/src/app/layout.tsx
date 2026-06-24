@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Inter, Syne } from "next/font/google";
-import { WalletProvider } from "@/context/WalletProvider";
 import "./globals.css";
 import "./landing.css";
 
@@ -36,10 +35,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
       className={`${syne.variable} ${ibmPlex.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-zinc-900">
-        <WalletProvider>{children}</WalletProvider>
+        {children}
       </body>
     </html>
   );
