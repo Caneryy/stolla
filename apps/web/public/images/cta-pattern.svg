@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
-  <circle cx="100" cy="80" r="60" stroke="white" stroke-width="1" opacity="0.3"/>
-  <circle cx="700" cy="120" r="80" stroke="white" stroke-width="1" opacity="0.2"/>
-  <circle cx="400" cy="300" r="100" stroke="white" stroke-width="1" opacity="0.15"/>
-  <circle cx="600" cy="320" r="40" stroke="white" stroke-width="1" opacity="0.25"/>
-  <circle cx="200" cy="280" r="50" stroke="white" stroke-width="1" opacity="0.2"/>
-</svg>
