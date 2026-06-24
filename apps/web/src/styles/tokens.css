@@ -1,0 +1,14 @@
+:root {
+  --paper: #f5f0e8;
+  --ink: #1a1a1a;
+  --ink-muted: color-mix(in srgb, var(--ink) 62%, transparent);
+  --paper-muted: color-mix(in srgb, var(--paper) 68%, transparent);
+  --accent: #4338ca;
+  --accent-muted: #6366f1;
+  --surface: #ffffff;
+  --border: #1a1a1a;
+  --shadow: 4px 4px 0 var(--ink);
+  --radius: 0;
+  --font-display: var(--font-syne), sans-serif;
+  --font-body: var(--font-ibm-plex), sans-serif;
+}

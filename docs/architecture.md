@@ -83,10 +83,12 @@ MVP proposals use empty targets (signaling votes only).
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Landing, wallet connect |
+| `/` | Marketing landing (neo-brutalist; see `docs/landing-page.md`) |
 | `/community` | Collection info, mint form (IPFS URI) |
 | `/proposals` | Proposal list |
 | `/proposals/[id]` | Vote, delegate, proposal detail |
+
+Landing and app use separate layouts: landing has section-anchor nav; app pages show wallet connect and app navigation.
 
 ### Transaction Flow
 

@@ -1,5 +1,29 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Stolla Web App — Agent Guide
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## Landing page (read first)
+
+Before editing `/`, read **`docs/landing-page.md`**.
+
+The landing page uses a **neo-brutalist** design (same pattern as Licitor). It is separate from the app dashboard. Key rules:
+
+- Section order: Hero → Features → Showcase → How it works → Technology → FAQ → CTA
+- Landing header has section anchor nav + "Enter app", not app tabs
+- Use `landing.css` tokens and `.neo-*` classes — avoid generic dark-gradient SaaS heroes
+
+## App routes
+
+| Route | Purpose |
+|-------|---------|
+| `/` | Marketing landing (route group `(landing)`) |
+| `/community` | NFT collection, mint form |
+| `/proposals` | Proposal list and voting |
+
+## Stack
+
+- Next.js App Router, TypeScript, Tailwind CSS v4
+- `@stellar/stellar-sdk` + `@creit.tech/stellar-wallets-kit`
+- Contract IDs in `NEXT_PUBLIC_*` env vars — see `lib/stellar.ts`
+
+## Next.js note
+
+This project may use a newer Next.js than your training data. Check `node_modules/next/dist/docs/` for API changes if builds fail.
