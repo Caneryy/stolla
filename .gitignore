@@ -28,3 +28,4 @@ contracts/target/
 
 # Test snapshots
 contracts/**/test_snapshots/
+.vercel
